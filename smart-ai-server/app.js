@@ -878,7 +878,7 @@ const aiMessages = document.getElementById("aiMessages");
 const aiSendButton = document.getElementById("aiSendButton");
 
 // Địa chỉ máy chủ SMART AI khi chạy thử trên máy tính
-const SMART_AI_URL = "http://localhost:3000/api/chat";
+const SMART_AI_URL = "https://mart-ai-backend-ntmx.onrender.com/api/chat";
 
 // Lưu lịch sử trò chuyện trong phiên hiện tại
 let aiHistory = [];
@@ -927,6 +927,8 @@ if (aiChatForm) {
     aiInput.value = "";
 
     try {
+    
+    
       const response = await fetch(SMART_AI_URL, {
         method: "POST",
         headers: {
