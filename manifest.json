@@ -1,0 +1,12 @@
+
+{
+  "name": "SMART TIME - Học chủ động, sống cân bằng",
+  "short_name": "SMART TIME",
+  "description": "Ứng dụng hỗ trợ học tập chủ động và sử dụng điện thoại cân bằng.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f0f7f1",
+  "theme_color": "#218c59"
+}
