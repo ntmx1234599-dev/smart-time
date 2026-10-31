@@ -868,3 +868,108 @@ function renderAchievementPage() {
 renderAchievementPage();
 
 console.log("SMART TIME đã tải đầy đủ chức năng!");
+// ==========================================
+// 7. TRỢ LÝ SMART AI - TRÒ CHUYỆN HỌC TẬP
+// ==========================================
+
+const aiChatForm = document.getElementById("aiChatForm");
+const aiInput = document.getElementById("aiInput");
+const aiMessages = document.getElementById("aiMessages");
+const aiSendButton = document.getElementById("aiSendButton");
+
+// Địa chỉ máy chủ SMART AI khi chạy thử trên máy tính
+const SMART_AI_URL = "https://mart-ai-backend-ntmx.onrender.com/api/chat";
+
+// Lưu lịch sử trò chuyện trong phiên hiện tại
+let aiHistory = [];
+
+function addAIMessage(role, content) {
+  const message = document.createElement("div");
+
+  message.className = role === "user"
+    ? "user-message"
+    : "ai-message";
+
+  const heading = document.createElement("strong");
+  heading.textContent = role === "user"
+    ? "👩‍🎓 Em"
+    : "🤖 SMART AI";
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = content;
+
+  message.appendChild(heading);
+  message.appendChild(paragraph);
+
+  aiMessages.appendChild(message);
+
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+}
+
+if (aiChatForm) {
+  aiChatForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const message = aiInput.value.trim();
+
+    if (!message) {
+      alert("Em hãy nhập câu hỏi nhé!");
+      return;
+    }
+
+    if (aiSendButton) {
+      aiSendButton.disabled = true;
+      aiSendButton.textContent = "⏳ Đang trả lời...";
+    }
+
+    addAIMessage("user", message);
+
+    aiInput.value = "";
+
+    try {
+    
+    
+      const response = await fetch(SMART_AI_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: message,
+          history: aiHistory
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Không thể kết nối SMART AI.");
+      }
+
+      const reply = data.reply || "SMART AI chưa có câu trả lời.";
+
+      addAIMessage("assistant", reply);
+
+      aiHistory.push(
+        { role: "user", content: message },
+        { role: "assistant", content: reply }
+      );
+
+      aiHistory = aiHistory.slice(-10);
+
+    } catch (error) {
+      console.error("Lỗi SMART AI:", error);
+
+      addAIMessage(
+        "assistant",
+        "Xin lỗi em! SMART AI đang gặp sự cố kết nối. Em hãy thử lại nhé!"
+      );
+
+    } finally {
+      if (aiSendButton) {
+        aiSendButton.disabled = false;
+        aiSendButton.textContent = "➤ Gửi tin nhắn";
+      }
+    }
+  });
+}

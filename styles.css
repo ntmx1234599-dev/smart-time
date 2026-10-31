@@ -801,3 +801,817 @@ footer {
   font-size: 18px;
   font-weight: bold;
 }
+
+
+
+/* =================================
+   SMART TIME - GIAO DIỆN XANH GHI
+   Giữ nguyên chức năng hiện có
+================================= */
+
+/* Màu nền và chữ chung */
+body {
+  background: #f3f6f9;
+  color: #263746;
+  line-height: 1.5;
+}
+
+/* Đầu trang */
+.top {
+  background: linear-gradient(135deg, #263746, #477fa8);
+  color: #ffffff;
+  padding: 30px 15px;
+}
+
+.brand {
+  letter-spacing: 1.5px;
+  font-size: 34px;
+}
+
+.top p {
+  color: #e5f1fa;
+}
+
+/* Khung nội dung */
+.container {
+  max-width: 1050px;
+  padding: 25px;
+}
+
+.welcome,
+.page,
+.summary-card,
+.feature,
+.phone-box,
+.chart-box {
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(38, 55, 70, 0.07);
+}
+
+/* Lời chào */
+.welcome {
+  border: 1px solid #e2eaf1;
+  padding: 28px 22px;
+}
+
+.welcome h1 {
+  color: #263746;
+}
+
+/* Các thẻ thống kê */
+.summary-card {
+  border: 1px solid #e2eaf1;
+  transition: transform 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+}
+
+.summary-card strong {
+  color: #477fa8;
+}
+
+/* Các chức năng chính */
+.feature {
+  border: 1px solid #dce6ef;
+  color: #263746;
+  padding: 25px 15px;
+  transition: all 0.2s ease;
+}
+
+.feature:hover {
+  border-color: #477fa8;
+  background: #f1f7fc;
+  transform: translateY(-3px);
+}
+
+.feature-icon {
+  font-size: 42px;
+}
+
+/* Các trang chức năng */
+.page {
+  border: 1px solid #e2eaf1;
+  padding: 25px;
+}
+
+.page h1,
+.section-title {
+  color: #263746;
+}
+
+/* Nút quay lại */
+.back-button {
+  background: #e8f0f6;
+  color: #315e7d;
+}
+
+.back-button:hover {
+  background: #d8e8f3;
+}
+
+/* Biểu mẫu và ô nhập liệu */
+.task-form {
+  background: #f4f7fa;
+}
+
+.task-form input,
+.task-form select,
+.phone-box input,
+#focusDuration {
+  border: 1px solid #cbd9e4;
+  border-radius: 10px;
+  color: #263746;
+}
+
+.task-form input:focus,
+.task-form select:focus,
+.phone-box input:focus {
+  outline: 2px solid #8bb9d8;
+  border-color: #477fa8;
+}
+
+/* Nút hành động chính */
+.primary-button,
+.phone-box form button {
+  background: #477fa8;
+  color: #ffffff;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.primary-button:hover,
+.phone-box form button:hover {
+  background: #315e7d;
+}
+
+/* Danh sách công việc */
+.task-item {
+  border: 1px solid #dce6ef;
+  background: #fbfcfe;
+  border-radius: 12px;
+}
+
+.task-item.completed {
+  background: #edf3f7;
+}
+
+.task-info {
+  color: #607586;
+}
+
+.done-button {
+  background: #e2eff7;
+  color: #315e7d;
+}
+
+/* Đồng hồ tập trung */
+.focus-box {
+  background: #f1f6fa;
+  border: 1px solid #dce6ef;
+  border-radius: 20px;
+}
+
+.timer-display {
+  color: #477fa8;
+}
+
+.pause-button {
+  background: #fff1d6;
+  color: #805b12;
+}
+
+.reset-button {
+  background: #e8edf2;
+  color: #34465b;
+}
+
+/* Nhật ký sử dụng điện thoại */
+.phone-box {
+  border-color: #dce6ef;
+}
+
+.phone-box h2 {
+  color: #477fa8;
+}
+
+.phone-summary div {
+  background: #edf4f9;
+}
+
+.phone-summary strong {
+  color: #477fa8;
+}
+
+.phone-history-item {
+  background: #f3f6f9;
+}
+
+.phone-history-item strong {
+  color: #477fa8;
+}
+
+/* Biểu đồ 7 ngày */
+.chart-box h2 {
+  color: #477fa8;
+}
+
+.legend-study,
+.chart-study-bar {
+  background: #477fa8;
+}
+
+.chart-play-bar {
+  background: #8bb9d8;
+}
+
+/* Nhắc nhở hoàn thành phiên học */
+.screen-reminder {
+  border: 1px solid #c9dfef;
+  background: #eaf4fa;
+  color: #315e7d;
+  border-radius: 14px;
+}
+
+/* Chân trang */
+footer {
+  color: #718596;
+}
+
+/* Hiển thị trên điện thoại */
+@media (max-width: 600px) {
+  .container {
+    padding: 14px;
+  }
+
+  .brand {
+    font-size: 29px;
+  }
+
+  .welcome {
+    padding: 20px 14px;
+  }
+
+  .page {
+    padding: 17px;
+  }
+
+  .feature {
+    padding: 20px 12px;
+  }
+}
+/* =========================================
+   SMART TIME - NÂNG CẤP GIAO DIỆN
+   Không thay đổi chức năng và thành tích
+========================================= */
+
+/* Chuyển động mượt */
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+.feature,
+.summary-card,
+.task-item {
+  transition: all 0.25s ease;
+}
+
+/* Nền trang */
+body {
+  background:
+    radial-gradient(circle at top left, #e5f0f8 0, transparent 35%),
+    #f3f6f9;
+}
+
+/* Đầu trang */
+.top {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #263746 0%, #477fa8 65%, #6b9fc3 100%);
+  box-shadow: 0 5px 20px rgba(38, 55, 70, 0.15);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Khung nội dung */
+.welcome,
+.page {
+  box-shadow: 0 8px 25px rgba(38, 55, 70, 0.08);
+}
+
+/* Tiêu đề */
+.welcome h1,
+.page h1 {
+  line-height: 1.35;
+}
+
+/* Thẻ thống kê */
+.summary-card {
+  border-top: 4px solid #477fa8;
+  min-height: 115px;
+  justify-content: center;
+}
+
+.summary-card strong {
+  font-size: 34px;
+}
+
+/* Thẻ chức năng */
+.feature {
+  min-height: 155px;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(38, 55, 70, 0.04);
+}
+
+.feature:active {
+  transform: scale(0.98);
+}
+
+/* Nút bấm */
+button {
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.primary-button,
+.phone-box form button {
+  box-shadow: 0 4px 10px rgba(71, 127, 168, 0.2);
+}
+
+.primary-button:active,
+.phone-box form button:active {
+  transform: scale(0.98);
+}
+
+/* Ô nhập liệu */
+input,
+select {
+  font-family: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid rgba(139, 185, 216, 0.35);
+}
+
+/* Danh sách nhiệm vụ */
+.task-item {
+  box-shadow: 0 2px 8px rgba(38, 55, 70, 0.04);
+}
+
+.task-item:hover {
+  border-color: #8bb9d8;
+  transform: translateY(-2px);
+}
+
+/* Đồng hồ tập trung */
+.focus-box {
+  box-shadow: 0 5px 18px rgba(38, 55, 70, 0.05);
+}
+
+.timer-display {
+  letter-spacing: 2px;
+  text-shadow: 0 3px 10px rgba(71, 127, 168, 0.12);
+}
+
+/* Nhật ký và biểu đồ */
+.phone-box,
+.chart-box {
+  box-shadow: 0 5px 18px rgba(38, 55, 70, 0.05);
+}
+
+.phone-summary div {
+  border: 1px solid #dce8f1;
+}
+
+/* Nút và vùng thao tác dễ sử dụng */
+button,
+.feature {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+.feature:focus-visible {
+  outline: 3px solid #8bb9d8;
+  outline-offset: 3px;
+}
+
+/* Màn hình nhỏ */
+@media (max-width: 600px) {
+  .top {
+    padding: 25px 12px;
+  }
+
+  .brand {
+    font-size: 27px;
+  }
+
+  .top p {
+    font-size: 15px;
+  }
+
+  .summary {
+    gap: 10px;
+  }
+
+  .summary-card {
+    padding: 14px 8px;
+  }
+
+  .summary-card strong {
+    font-size: 27px;
+  }
+
+  .summary-card span {
+    font-size: 14px;
+  }
+
+  .feature-grid {
+    gap: 12px;
+  }
+
+  .feature {
+    min-height: 125px;
+  }
+
+  .timer-actions button {
+    flex: 1;
+    min-width: 100px;
+  }
+}
+
+/* Hỗ trợ người dùng giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =====================================
+   SMART TIME - NÂNG CẤP TRANG CHỦ
+===================================== */
+
+/* Khoảng cách tổng thể */
+#homePage {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Khung chào mừng */
+#homePage .welcome:first-child {
+  background: linear-gradient(135deg, #ffffff, #e8f2f9);
+  border: 1px solid #d5e5f0;
+  border-left: 6px solid #477fa8;
+  padding: 35px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(38, 55, 70, 0.08);
+}
+
+#homePage .welcome:first-child h1 {
+  color: #263746;
+  font-size: clamp(23px, 4vw, 30px);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+#homePage .welcome:first-child p {
+  color: #526b7e;
+  line-height: 1.8;
+}
+
+/* Tiêu đề các khu vực */
+#homePage .section-title {
+  color: #315e7d;
+  font-size: 22px;
+  margin: 5px 0 0;
+  padding-left: 12px;
+  border-left: 4px solid #8bb9d8;
+}
+
+/* Khu vực thống kê */
+#homePage .summary {
+  margin-bottom: 0;
+}
+
+#homePage .summary-card {
+  background: linear-gradient(145deg, #ffffff, #edf4f9);
+  border: 1px solid #dce8f1;
+  border-radius: 17px;
+}
+
+/* Mô tả chức năng */
+#homePage > .description {
+  margin-top: -12px;
+  color: #607586;
+}
+
+/* Các thẻ chức năng */
+#homePage .feature-grid {
+  gap: 18px;
+}
+
+#homePage .feature {
+  min-height: 175px;
+  background: linear-gradient(145deg, #ffffff, #f1f7fc);
+  border: 1px solid #d8e6f0;
+  border-radius: 19px;
+  padding: 25px 18px;
+  box-shadow: 0 5px 15px rgba(38, 55, 70, 0.06);
+}
+
+#homePage .feature:hover {
+  background: linear-gradient(145deg, #ffffff, #e4f1fa);
+  border-color: #477fa8;
+  box-shadow: 0 9px 20px rgba(71, 127, 168, 0.13);
+  transform: translateY(-4px);
+}
+
+#homePage .feature-icon {
+  font-size: 43px;
+}
+
+#homePage .feature strong {
+  color: #315e7d;
+  line-height: 1.4;
+}
+
+#homePage .feature small {
+  color: #607586;
+  line-height: 1.6;
+}
+
+/* Thông điệp cuối trang */
+#homePage .welcome:last-child {
+  background: linear-gradient(135deg, #eaf3f9, #ffffff);
+  border: 1px solid #d6e5ef;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 5px;
+}
+
+#homePage .welcome:last-child h2 {
+  color: #315e7d;
+}
+
+#homePage .welcome:last-child p {
+  line-height: 1.8;
+  color: #526b7e;
+}
+
+/* Hiển thị trên điện thoại */
+@media (max-width: 600px) {
+  #homePage .welcome:first-child {
+    padding: 24px 16px;
+  }
+
+  #homePage .section-title {
+    font-size: 19px;
+  }
+
+  #homePage .feature {
+    min-height: 145px;
+  }
+
+  #homePage .welcome:last-child {
+    padding: 20px 15px;
+  }
+}
+
+
+/* =========================================
+   SMART TIME - PROFESSIONAL UI
+   Đồng bộ giao diện các trang chức năng
+   Không chỉnh sửa phần Thành tích
+========================================= */
+
+/* Kiểu chữ và màu sắc chung */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #263746;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Khung nội dung */
+.container {
+  max-width: 1120px;
+  padding: 30px 24px;
+}
+
+/* Đầu trang */
+.top {
+  padding: 34px 20px;
+  background: linear-gradient(120deg, #263746, #477fa8);
+}
+
+.top p {
+  letter-spacing: 0.3px;
+}
+
+/* Khung chào mừng và trang chức năng */
+.welcome,
+.page {
+  border: 1px solid #e0e9f0;
+  box-shadow: 0 8px 24px rgba(38, 55, 70, 0.07);
+}
+
+/* Tiêu đề trang */
+.page h1 {
+  color: #263746;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5edf3;
+}
+
+/* Tiêu đề khu vực */
+.section-title {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Nút quay lại */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #d5e3ed;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: #dcebf5;
+  transform: translateX(-2px);
+}
+
+/* Biểu mẫu */
+.task-form {
+  border: 1px solid #e0e9f0;
+  background: #f7f9fb;
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.task-form label,
+.phone-box label {
+  color: #315e7d;
+  font-weight: 600;
+}
+
+/* Ô nhập liệu */
+input,
+select {
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-form input,
+.task-form select,
+.phone-box input,
+#focusDuration {
+  min-height: 45px;
+}
+
+.task-form input:focus,
+.task-form select:focus,
+.phone-box input:focus,
+#focusDuration:focus {
+  outline: none;
+  border-color: #477fa8;
+  box-shadow: 0 0 0 3px rgba(71, 127, 168, 0.14);
+}
+
+/* Nút hành động */
+.primary-button,
+.phone-box form button {
+  min-height: 46px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 12px rgba(71, 127, 168, 0.16);
+  transition: all 0.2s ease;
+}
+
+.primary-button:hover,
+.phone-box form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(71, 127, 168, 0.22);
+}
+
+/* Danh sách nhiệm vụ */
+.task-item {
+  padding: 18px;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.task-item:hover {
+  border-color: #a9c9df;
+  box-shadow: 0 5px 14px rgba(38, 55, 70, 0.06);
+}
+
+.task-actions button {
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.task-actions button:hover {
+  transform: translateY(-1px);
+}
+
+/* Đồng hồ tập trung */
+.focus-box {
+  padding: 30px 20px;
+  border-radius: 20px;
+}
+
+.focus-box h2 {
+  color: #315e7d;
+}
+
+.timer-actions button {
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.timer-actions button:hover {
+  transform: translateY(-2px);
+}
+
+/* Nhật ký điện thoại và biểu đồ */
+.phone-box,
+.chart-box {
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.phone-box h2,
+.chart-box h2 {
+  color: #315e7d;
+}
+
+.phone-summary div {
+  border-radius: 14px;
+  padding: 20px 12px;
+}
+
+.phone-advice {
+  border: 1px solid #f0e4c9;
+}
+
+/* Chân trang */
+footer {
+  padding: 28px 15px;
+  color: #718596;
+}
+
+/* Hiệu ứng nhẹ, không gây rối mắt */
+button,
+.feature {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+.feature:focus-visible {
+  outline: 3px solid #8bb9d8;
+  outline-offset: 3px;
+}
+
+/* Giao diện điện thoại */
+@media (max-width: 600px) {
+  .container {
+    padding: 16px 13px;
+  }
+
+  .top {
+    padding: 25px 12px;
+  }
+
+  .page {
+    padding: 18px 14px;
+  }
+
+  .task-form {
+    padding: 16px 12px;
+  }
+
+  .phone-box,
+  .chart-box {
+    padding: 18px 12px;
+  }
+
+  .focus-box {
+    padding: 22px 12px;
+  }
+}

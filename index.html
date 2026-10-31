@@ -7,333 +7,529 @@
   <title>SMART TIME</title>
 
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#218c59">
+  <meta name="theme-color" content="#477FA8">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header class="top">
-    <div class="brand">🌱 SMART TIME</div>
-    <p>Học chủ động – Sống cân bằng</p>
-  </header>
 
-  <main class="container">
+<header class="top">
+  <div class="brand">💠 SMART TIME</div>
+  <p>LÀM CHỦ THỜI GIAN – LÀM CHỦ BẢN THÂN</p>
+</header>
 
-    <section id="homePage">
-      <div class="welcome">
-        <h1>Xin chào bạn! 👋</h1>
-        <p>Mỗi ngày một chút cố gắng, mỗi ngày một bước tiến bộ.</p>
+<main class="container">
+
+  <!-- TRANG CHỦ -->
+  <section id="homePage" class="page">
+
+    <div class="welcome">
+      <h1>Chào mừng em đến với SMART TIME! 👋</h1>
+      <p>
+        Mỗi ngày là một cơ hội để em học tập tốt hơn,
+        quản lý thời gian hiệu quả hơn và phát triển bản thân.
+      </p>
+      <p>
+        <strong>Hãy bắt đầu từ những mục tiêu nhỏ và kiên trì thực hiện nhé!</strong>
+      </p>
+    </div>
+
+    <h2 class="section-title">📊 TỔNG QUAN HỌC TẬP</h2>
+
+    <div class="summary">
+      <div class="summary-card">
+        <strong id="totalCount">0</strong>
+        <span>Tổng nhiệm vụ đã lập</span>
       </div>
 
-      <div class="summary">
-        <div class="summary-card">
-          <strong id="totalCount">0</strong>
-          <span>Nhiệm vụ</span>
-        </div>
-        <div class="summary-card">
-          <strong id="doneCount">0</strong>
-          <span>Đã hoàn thành</span>
-        </div>
+      <div class="summary-card">
+        <strong id="doneCount">0</strong>
+        <span>Nhiệm vụ đã hoàn thành</span>
+      </div>
+    </div>
+
+    <h2 class="section-title">🎯 KHÔNG GIAN QUẢN LÝ THỜI GIAN</h2>
+
+    <p class="description">
+      Lựa chọn chức năng phù hợp để bắt đầu hành trình
+      học tập chủ động và sử dụng thời gian khoa học.
+    </p>
+
+    <div class="feature-grid">
+
+      <button class="feature" data-page="plannerPage">
+        <span class="feature-icon">📚</span>
+        <strong>KẾ HOẠCH HỌC TẬP</strong>
+        <small>Lập mục tiêu, sắp xếp và theo dõi nhiệm vụ mỗi ngày.</small>
+      </button>
+
+      <button class="feature" data-page="focusPage">
+        <span class="feature-icon">⏱️</span>
+        <strong>RÈN LUYỆN TẬP TRUNG</strong>
+        <small>Quản lý thời gian học, hạn chế xao nhãng.</small>
+      </button>
+
+      <button class="feature" data-page="phonePage">
+        <span class="feature-icon">📱</span>
+        <strong>NHẬT KÝ ĐIỆN THOẠI</strong>
+        <small>Ghi nhận thời gian học tập và giải trí.</small>
+      </button>
+
+      <button class="feature" data-page="achievementPage">
+        <span class="feature-icon">🏆</span>
+        <strong>HÀNH TRÌNH TIẾN BỘ</strong>
+        <small>Ghi nhận nỗ lực và thành quả của bản thân.</small>
+      </button>
+            <button class="feature" data-page="aiPage">
+        <span class="feature-icon">🤖</span>
+        <strong>SMART AI – BẠN ĐỒNG HÀNH</strong>
+        <small>Trò chuyện, tư vấn và hỗ trợ lập kế hoạch học tập.</small>
+      </button>
+
+    </div>
+
+    <div class="welcome">
+      <h2>💡 THÔNG ĐIỆP SMART TIME</h2>
+      <p>
+        Thời gian là tài sản quý giá. Biết lập kế hoạch,
+        tập trung khi học và sử dụng điện thoại hợp lý
+        sẽ giúp em học tập hiệu quả và sống cân bằng hơn.
+      </p>
+      <p>
+        <strong>Hôm nay em đã sử dụng thời gian thật hiệu quả chưa?</strong>
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- TRANG KẾ HOẠCH HỌC TẬP -->
+  <section id="plannerPage" class="page" hidden>
+
+    <button class="back-button" data-page="homePage">
+      ← Trang chủ
+    </button>
+
+    <h1>📚 Kế hoạch học tập</h1>
+
+    <p class="description">
+      Hãy lên kế hoạch rõ ràng để học tập chủ động hơn nhé!
+    </p>
+
+    <form id="taskForm" class="task-form">
+
+      <label for="taskTitle">Tên nhiệm vụ học tập</label>
+      <input
+        id="taskTitle"
+        type="text"
+        placeholder="Ví dụ: Ôn tập bài GDCD"
+        required
+        maxlength="120"
+      >
+
+      <label for="taskSubject">Môn học</label>
+      <select id="taskSubject" required>
+        <option value="">-- Chọn môn học --</option>
+        <option>GDCD</option>
+        <option>Ngữ văn</option>
+        <option>Toán</option>
+        <option>Tiếng Anh</option>
+        <option>Khoa học tự nhiên</option>
+        <option>Lịch sử và Địa lí</option>
+        <option>Tin học</option>
+        <option>Công nghệ</option>
+        <option>Khác</option>
+      </select>
+
+      <label for="taskDate">Ngày thực hiện</label>
+      <input id="taskDate" type="date" required>
+
+      <label for="taskPriority">Mức độ ưu tiên</label>
+      <select id="taskPriority" required>
+        <option value="Bình thường">Bình thường</option>
+        <option value="Quan trọng">Quan trọng</option>
+        <option value="Rất quan trọng">Rất quan trọng</option>
+      </select>
+
+      <button class="primary-button" type="submit">
+        + Thêm nhiệm vụ
+      </button>
+
+    </form>
+
+    <div class="task-heading">
+      <h2>Danh sách nhiệm vụ</h2>
+      <span id="taskTotal">0 nhiệm vụ</span>
+    </div>
+
+    <div id="taskList" class="task-list"></div>
+
+  </section>
+
+
+  <!-- TRANG RÈN LUYỆN TẬP TRUNG -->
+  <section id="focusPage" class="page" hidden>
+
+    <button class="back-button" data-page="homePage">
+      ← Trang chủ
+    </button>
+
+    <h1>⏱️ Tập trung học</h1>
+
+    <p class="description">
+      Tập trung từng khoảng thời gian ngắn để học tập hiệu quả hơn nhé!
+    </p>
+
+    <div class="focus-box">
+
+      <h2>Chọn thời gian tập trung</h2>
+
+      <select id="focusDuration">
+        <option value="15">15 phút</option>
+        <option value="25" selected>25 phút</option>
+        <option value="30">30 phút</option>
+        <option value="45">45 phút</option>
+      </select>
+
+      <div id="timerDisplay" class="timer-display">
+        25:00
       </div>
 
-      <h2 class="section-title">Không gian của tôi</h2>
-
-      <div class="feature-grid">
-        <button class="feature" data-page="plannerPage">
-          <span class="feature-icon">📚</span>
-          <strong>Kế hoạch học tập</strong>
-          <small>Lập kế hoạch mỗi ngày</small>
-        </button>
-
-        <button class="feature" data-page="focusPage">
-          <span class="feature-icon">⏱️</span>
-          <strong>Tập trung học</strong>
-          <small>Rèn luyện sự tập trung</small>
-        </button>
-
-        <button class="feature" data-page="phonePage">
-          <span class="feature-icon">📱</span>
-          <strong>Thời gian điện thoại</strong>
-          <small>Theo dõi thời gian sử dụng</small>
-        </button>
-
-        <button class="feature" data-page="achievementPage">
-          <span class="feature-icon">🏆</span>
-          <strong>Thành tích của tôi</strong>
-          <small>Ghi nhận sự cố gắng</small>
-        </button>
-      </div>
-    </section>
-
-    <section id="plannerPage" class="page" hidden>
-      <button class="back-button" data-page="homePage">← Trang chủ</button>
-
-      <h1>📚 Kế hoạch học tập</h1>
-      <p class="description">
-        Hãy lên kế hoạch rõ ràng để học tập chủ động hơn nhé!
+      <p id="timerMessage" class="timer-message">
+        Bạn đã sẵn sàng bắt đầu chưa?
       </p>
 
-      <form id="taskForm" class="task-form">
-        <label for="taskTitle">Tên nhiệm vụ học tập</label>
-        <input
-          id="taskTitle"
-          type="text"
-          placeholder="Ví dụ: Ôn tập bài GDCD"
-          required
-          maxlength="120"
-        >
+      <div id="screenReminder" class="screen-reminder" hidden>
+        🌟 Hãy nghỉ ngơi một chút nhé!
+      </div>
 
-        <label for="taskSubject">Môn học</label>
-        <select id="taskSubject" required>
-          <option value="">-- Chọn môn học --</option>
-          <option>GDCD</option>
-          <option>Ngữ văn</option>
-          <option>Toán</option>
-          <option>Tiếng Anh</option>
-          <option>Khoa học tự nhiên</option>
-          <option>Lịch sử và Địa lí</option>
-          <option>Tin học</option>
-          <option>Công nghệ</option>
-          <option>Khác</option>
-        </select>
-
-        <label for="taskDate">Ngày thực hiện</label>
-        <input id="taskDate" type="date" required>
-
-        <label for="taskPriority">Mức độ ưu tiên</label>
-        <select id="taskPriority" required>
-          <option value="Bình thường">Bình thường</option>
-          <option value="Quan trọng">Quan trọng</option>
-          <option value="Rất quan trọng">Rất quan trọng</option>
-        </select>
-
-        <button class="primary-button" type="submit">
-          + Thêm nhiệm vụ
+      <div class="timer-actions">
+        <button id="startTimer" class="primary-button">
+          ▶ Bắt đầu
         </button>
+
+        <button id="pauseTimer" class="pause-button">
+          ⏸ Tạm dừng
+        </button>
+
+        <button id="resetTimer" class="reset-button">
+          ↻ Làm lại
+        </button>
+      </div>
+
+    </div>
+
+    <div class="focus-tip">
+      <h3>🌿 Bí quyết tập trung</h3>
+      <ul>
+        <li>Chuẩn bị sách vở trước khi bắt đầu.</li>
+        <li>Để điện thoại sang một bên.</li>
+        <li>Không làm việc riêng trong thời gian tập trung.</li>
+        <li>Nghỉ ngắn sau khi hoàn thành phiên học.</li>
+      </ul>
+    </div>
+
+  </section>
+
+
+  <!-- TRANG NHẬT KÝ ĐIỆN THOẠI -->
+  <section id="phonePage" class="page" hidden>
+
+    <button class="back-button" data-page="homePage">
+      ← Trang chủ
+    </button>
+
+    <h1>📱 Nhật ký sử dụng điện thoại</h1>
+
+    <p class="description">
+      Hãy chủ động theo dõi thời gian sử dụng điện thoại mỗi ngày
+      để cân bằng giữa học tập và giải trí nhé!
+    </p>
+
+    <div class="phone-box">
+
+      <h2>📝 Ghi nhận thời gian hôm nay</h2>
+
+      <form id="phoneForm">
+
+        <label for="phoneDate">Ngày ghi nhận</label>
+        <input type="date" id="phoneDate" required>
+
+        <h3>📚 Thời gian sử dụng cho học tập</h3>
+
+        <div class="time-inputs">
+
+          <div>
+            <label for="studyHours">Số giờ</label>
+            <input
+              type="number"
+              id="studyHours"
+              min="0"
+              max="24"
+              value="0"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="studyMinutes">Số phút</label>
+            <input
+              type="number"
+              id="studyMinutes"
+              min="0"
+              max="59"
+              value="0"
+              required
+            >
+          </div>
+
+        </div>
+
+        <h3>🎮 Thời gian sử dụng cho giải trí</h3>
+
+        <div class="time-inputs">
+
+          <div>
+            <label for="playHours">Số giờ</label>
+            <input
+              type="number"
+              id="playHours"
+              min="0"
+              max="24"
+              value="0"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="playMinutes">Số phút</label>
+            <input
+              type="number"
+              id="playMinutes"
+              min="0"
+              max="59"
+              value="0"
+              required
+            >
+          </div>
+
+        </div>
+
+        <button type="submit" class="primary-button">
+          💾 Lưu nhật ký
+        </button>
+
       </form>
 
-      <div class="task-heading">
-        <h2>Danh sách nhiệm vụ</h2>
-        <span id="taskTotal">0 nhiệm vụ</span>
-      </div>
-
-      <div id="taskList" class="task-list"></div>
-    </section>
-
-    <section id="focusPage" class="page" hidden>
-  <button class="back-button" data-page="homePage">← Trang chủ</button>
-  <h1>⏱️ Tập trung học</h1>
-  <p class="description">
-    Tập trung từng khoảng thời gian ngắn để học tập hiệu quả hơn nhé!
-  </p>
-
-  <div class="focus-box">
-    <h2>Chọn thời gian tập trung</h2>
-    <select id="focusDuration">
-      <option value="15">15 phút</option>
-      <option value="25" selected>25 phút</option>
-      <option value="30">30 phút</option>
-      <option value="45">45 phút</option>
-    </select>
-
-    <div id="timerDisplay" class="timer-display">25:00</div>
-    <p id="timerMessage" class="timer-message">Bạn đã sẵn sàng bắt đầu chưa?</p>
-    <div id="screenReminder" class="screen-reminder" hidden>
-  🌟 Hãy nghỉ ngơi một chút nhé!
-</div>
-
-    <div class="timer-actions">
-      <button id="startTimer" class="primary-button">▶ Bắt đầu</button>
-      <button id="pauseTimer" class="pause-button">⏸ Tạm dừng</button>
-      <button id="resetTimer" class="reset-button">↻ Làm lại</button>
-    </div>
-  </div>
-
-  <div class="focus-tip">
-    <h3>🌿 Bí quyết tập trung</h3>
-    <ul>
-      <li>Chuẩn bị sách vở trước khi bắt đầu.</li>
-      <li>Để điện thoại sang một bên.</li>
-      <li>Không làm việc riêng trong thời gian tập trung.</li>
-      <li>Nghỉ ngắn sau khi hoàn thành phiên học.</li>
-    </ul>
-  </div>
-</section>
-
-    
-<section id="phonePage" class="page" hidden>
-  <button class="back-button" data-page="homePage">← Trang chủ</button>
-
-  <h1>📱 Nhật ký sử dụng điện thoại</h1>
-
-  <p class="description">
-    Hãy chủ động theo dõi thời gian sử dụng điện thoại mỗi ngày
-    để cân bằng giữa học tập và giải trí nhé!
-  </p>
-
-  <div class="phone-box">
-    <h2>📝 Ghi nhận thời gian hôm nay</h2>
-
-    <form id="phoneForm">
-      <label for="phoneDate">Ngày ghi nhận</label>
-      <input type="date" id="phoneDate" required>
-
-      <h3>📚 Thời gian sử dụng cho học tập</h3>
-
-      <div class="time-inputs">
-        <div>
-          <label for="studyHours">Số giờ</label>
-          <input type="number" id="studyHours" min="0" max="24" value="0" required>
-        </div>
-        <div>
-          <label for="studyMinutes">Số phút</label>
-          <input type="number" id="studyMinutes" min="0" max="59" value="0" required>
-        </div>
-      </div>
-
-      <h3>🎮 Thời gian sử dụng cho giải trí</h3>
-
-      <div class="time-inputs">
-        <div>
-          <label for="playHours">Số giờ</label>
-          <input type="number" id="playHours" min="0" max="24" value="0" required>
-        </div>
-        <div>
-          <label for="playMinutes">Số phút</label>
-          <input type="number" id="playMinutes" min="0" max="59" value="0" required>
-        </div>
-      </div>
-
-      <button type="submit" class="primary-button">
-        💾 Lưu nhật ký
-      </button>
-    </form>
-  </div>
-
-  <div class="phone-box">
-    <h2>📊 Thống kê 7 ngày gần nhất</h2>
-
-    <div class="phone-summary">
-      <div>
-        <strong id="studyTotal">0 phút</strong>
-        <span>Học tập</span>
-      </div>
-      <div>
-        <strong id="playTotal">0 phút</strong>
-        <span>Giải trí</span>
-      </div>
     </div>
 
 
-<div class="chart-box">
-  <h2>📊 Biểu đồ sử dụng điện thoại</h2>
+    <div class="phone-box">
 
-  <p class="chart-description">
-    Theo dõi và so sánh thời gian học tập, giải trí trong 7 ngày gần nhất.
-  </p>
+      <h2>📊 Thống kê 7 ngày gần nhất</h2>
 
-  <div class="chart-legend">
-    <span><i class="legend-study"></i> Học tập</span>
-    <span><i class="legend-play"></i> Giải trí</span>
-  </div>
+      <div class="phone-summary">
 
-  <div id="phoneChart" class="phone-chart">
-    Biểu đồ sẽ xuất hiện khi có dữ liệu.
-  </div>
-</div>
+        <div>
+          <strong id="studyTotal">0 phút</strong>
+          <span>Học tập</span>
+        </div>
 
-    <p id="phoneAdvice" class="phone-advice">
-      Hãy bắt đầu ghi nhận thời gian sử dụng điện thoại của bạn nhé!
+        <div>
+          <strong id="playTotal">0 phút</strong>
+          <span>Giải trí</span>
+        </div>
+
+      </div>
+
+      <div class="chart-box">
+
+        <h2>📊 Biểu đồ sử dụng điện thoại</h2>
+
+        <p class="chart-description">
+          Theo dõi và so sánh thời gian học tập, giải trí trong 7 ngày gần nhất.
+        </p>
+
+        <div class="chart-legend">
+          <span>
+            <i class="legend-study"></i>
+            Học tập
+          </span>
+
+          <span>
+            <i class="legend-play"></i>
+            Giải trí
+          </span>
+        </div>
+
+        <div id="phoneChart" class="phone-chart">
+          Biểu đồ sẽ xuất hiện khi có dữ liệu.
+        </div>
+
+      </div>
+
+      <p id="phoneAdvice" class="phone-advice">
+        Hãy bắt đầu ghi nhận thời gian sử dụng điện thoại của bạn nhé!
+      </p>
+
+      <div id="phoneHistory" class="phone-history">
+        Chưa có dữ liệu theo dõi.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TRANG THÀNH TÍCH CỦA TÔI: GIỮ NGUYÊN -->
+  <section id="achievementPage" class="page" hidden>
+
+    <button class="back-button" data-page="homePage">
+      ← Trang chủ
+    </button>
+
+    <h1>🏆 Thành tích của tôi</h1>
+
+    <p class="description">
+      Mỗi ngày cố gắng một chút, em sẽ tiến bộ hơn!
     </p>
 
-    <div id="phoneHistory" class="phone-history">
-      Chưa có dữ liệu theo dõi.
-    </div>
-  </div>
-</section>
-<!-- TRANG THÀNH TÍCH CỦA TÔI -->
-<section id="achievementPage" class="page" hidden>
+    <div class="phone-box">
 
-  <button class="back-button" data-page="homePage">
-    ← Trang chủ
-  </button>
+      <h2>⭐ Điểm thưởng của em</h2>
 
-  <h1>🏆 Thành tích của tôi</h1>
+      <div class="level-box">
 
-  <p class="description">
-    Mỗi ngày cố gắng một chút, em sẽ tiến bộ hơn!
-  </p>
+        <h3 id="studentLevel">🌱 Mầm non</h3>
 
-  <div class="phone-box">
-    <h2>⭐ Điểm thưởng của em</h2>
-    
-<div class="level-box">
-  <h3 id="studentLevel">🌱 Mầm non</h3>
-  <p id="levelDescription">Hãy bắt đầu hành trình cố gắng nhé!</p>
+        <p id="levelDescription">
+          Hãy bắt đầu hành trình cố gắng nhé!
+        </p>
 
-  <div class="progress-track">
-    <div id="levelProgress" class="progress-fill"></div>
-  </div>
+        <div class="progress-track">
+          <div id="levelProgress" class="progress-fill"></div>
+        </div>
 
-  <p id="progressText">0 / 20 điểm</p>
-</div>
+        <p id="progressText">0 / 20 điểm</p>
 
+      </div>
 
-    <div class="achievement-score">
-      <strong id="totalPoints">0</strong>
-      <span>điểm</span>
+      <div class="achievement-score">
+        <strong id="totalPoints">0</strong>
+        <span>điểm</span>
+      </div>
+
+      <p>
+        Hãy chăm chỉ học tập để tích lũy điểm thưởng nhé!
+      </p>
+
     </div>
 
-    <p>Hãy chăm chỉ học tập để tích lũy điểm thưởng nhé!</p>
-  </div>
 
-  <div class="phone-box">
-    <h2>🎖️ Bộ sưu tập huy hiệu</h2>
+    <div class="phone-box">
 
-    <div class="badge-list">
+      <h2>🎖️ Bộ sưu tập huy hiệu</h2>
 
-      <div class="badge-item">
-        <span>🌱</span>
-        <strong>Khởi đầu tốt</strong>
-        <small>Hoàn thành nhiệm vụ đầu tiên</small>
-      </div>
+      <div class="badge-list">
 
-      <div class="badge-item">
-        <span>📚</span>
-        <strong>Chăm học</strong>
-        <small>Hoàn thành 5 nhiệm vụ</small>
-      </div>
+        <div class="badge-item">
+          <span>🌱</span>
+          <strong>Khởi đầu tốt</strong>
+          <small>Hoàn thành nhiệm vụ đầu tiên</small>
+        </div>
 
-      <div class="badge-item">
-        <span>⏱️</span>
-        <strong>Tập trung</strong>
-        <small>Hoàn thành 5 phiên tập trung</small>
-      </div>
+        <div class="badge-item">
+          <span>📚</span>
+          <strong>Chăm học</strong>
+          <small>Hoàn thành 5 nhiệm vụ</small>
+        </div>
 
-      <div class="badge-item">
-        <span>🏆</span>
-        <strong>Kiên trì</strong>
-        <small>Tích lũy 100 điểm</small>
+        <div class="badge-item">
+          <span>⏱️</span>
+          <strong>Tập trung</strong>
+          <small>Hoàn thành 5 phiên tập trung</small>
+        </div>
+
+        <div class="badge-item">
+          <span>🏆</span>
+          <strong>Kiên trì</strong>
+          <small>Tích lũy 100 điểm</small>
+        </div>
+
       </div>
 
     </div>
-  </div>
 
-  <div class="phone-box">
-    <h2>💌 Lời nhắn dành cho em</h2>
-    <p id="achievementMessage">
-      Hãy bắt đầu từ một việc nhỏ hôm nay. Thành công được tạo nên từ những cố gắng mỗi ngày!
+
+    <div class="phone-box">
+
+      <h2>💌 Lời nhắn dành cho em</h2>
+
+      <p id="achievementMessage">
+        Hãy bắt đầu từ một việc nhỏ hôm nay. Thành công được tạo nên từ những cố gắng mỗi ngày!
+      </p>
+
+    </div>
+
+  </section>
+  <!-- TRANG TRÒ CHUYỆN SMART AI -->
+  <section id="aiPage" class="page" hidden>
+
+    <button class="back-button" data-page="homePage">
+      ← Trang chủ
+    </button>
+
+    <h1>🤖 SMART AI – Người bạn đồng hành học tập</h1>
+
+    <p class="description">
+      Hãy chia sẻ những khó khăn trong học tập.
+      SMART AI luôn sẵn sàng lắng nghe và đồng hành cùng em!
     </p>
-  </div>
 
-</section>
+    <div class="phone-box ai-chat-box">
 
-  </main>
+      <div id="aiMessages" class="ai-messages">
+        <div class="ai-message">
+          <strong>🤖 SMART AI</strong>
+          <p>
+            Xin chào em! Mình có thể giúp em lập kế hoạch,
+            quản lý thời gian, giải quyết khó khăn trong học tập
+            và động viên em mỗi ngày. Em muốn trò chuyện về điều gì?
+          </p>
+        </div>
+      </div>
 
-  <footer>
-    SMART TIME – Mỗi ngày tiến bộ hơn! 🌱
-  </footer>
+      <form id="aiChatForm" class="ai-chat-form">
 
-  <script src="app.js"></script>
+        <textarea
+          id="aiInput"
+          placeholder="Nhập câu hỏi của em tại đây..."
+          rows="3"
+          maxlength="2000"
+          required
+        ></textarea>
+
+        <button type="submit" id="aiSendButton" class="primary-button">
+          ➤ Gửi tin nhắn
+        </button>
+
+      </form>
+
+      <p class="description">
+        💡 Không chia sẻ mật khẩu, địa chỉ nhà hoặc thông tin riêng tư nhé!
+      </p>
+
+    </div>
+
+  </section>
+</main>
+
+
+<footer>
+  SMART TIME – Mỗi ngày tiến bộ hơn! 🌱
+</footer>
+
+<script src="app.js"></script>
+
 </body>
 </html>

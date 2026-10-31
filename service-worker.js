@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "smart-time-v5";
+const CACHE_NAME = "smart-time-v6";
 
 const FILES_TO_CACHE = [
   "./",
